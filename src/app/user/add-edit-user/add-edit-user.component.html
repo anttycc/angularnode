@@ -1,0 +1,88 @@
+<div class="container" style="margin-top: 70px">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="info-form">
+        <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+          <div class="progress form-group" *ngIf="progress > 0">
+            <div
+              class="progress-bar progress-bar-striped bg-success"
+              role="progressbar"
+              [style.width.%]="progress"
+            ></div>
+          </div>
+
+          <div class="form-group">
+            <input type="file" (change)="uploadFile($event)" />
+          </div>
+          <div class="form-group">
+            <label for="user">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstname"
+              id="user"
+              placeholder="Enter firstname"
+            />
+            <small
+              *ngIf="userForm?.controls?.firstname?.invalid"
+              class="form-text text-muted"
+              >Invalid Input</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="user">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastname"
+              id="user"
+              placeholder="Enter lastname"
+            />
+            <small
+              *ngIf="userForm?.controls?.lastname?.invalid"
+              class="form-text text-muted"
+              >Invalid Input</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="user">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="user"
+              placeholder="Enter email"
+            />
+            <small
+              *ngIf="userForm?.controls?.email?.invalid"
+              class="form-text text-muted"
+              >Invalid Input</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="user">MobileNumber</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="mobileNumber"
+              id="user"
+              placeholder="Enter mobileNumber"
+            />
+            <small
+              *ngIf="userForm?.controls?.mobileNumber?.invalid"
+              class="form-text text-muted"
+              >Invalid Input</small
+            >
+          </div>
+          <button
+            type="submit"
+            [disabled]="userForm?.invalid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

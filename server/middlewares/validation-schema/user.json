@@ -1,0 +1,59 @@
+{
+  "user": {
+    "post": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string",
+            "required": true
+          },
+          "lastname": {
+            "type": "string",
+            "required": true
+
+          },
+        
+          "mobileNumber": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 10
+          },
+          "email": {
+            "type": "string",
+            "required": true,
+            "format": "email"
+          }          
+        }
+      }
+    },
+    "put": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string",
+            "required": true
+          },
+          "lastname": {
+            "type": "string",
+            "required": true
+
+          },
+          
+          "mobileNumber": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 10
+          },
+          "email": {
+            "type": "string",
+            "required": true,
+            "format": "email"
+          }          
+        }
+      }
+    }
+    
+  }
+}
